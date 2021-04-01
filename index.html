@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advance-CSS-Assiment-2-Animacija</title>
+    <style>
+        body{
+            background: #050210;
+            width: 900px;
+            margin: 0 auto;
+        }
+        .circles{
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        #one{
+            margin-top: 70px;
+            border: 2px solid rgba(255, 255, 255, 0.842);
+            position: relative;
+            width:400px;
+            height: 400px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            animation: rotate 1s linear infinite;
+        }
+        #one::before{
+            content: "";
+            position: absolute;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            top: 0px;
+            right: 0;
+            left: 0px;
+            bottom: 0;
+            filter: blur(30px);
+        }
+        @keyframes rotate {
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+        #two{
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #050210;
+            top: -75px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        #two::after{
+            content: "";
+            position:absolute;
+            top:10px ;right: 10px;bottom: 10px;left:10px;
+            background: #3f19b1;
+            border-radius: 50%;
+            animation: pulse 1.2s ease-out infinite;   
+        }
+        @keyframes pulse {
+            0%{
+                opacity: 20%;
+                transform: scale(0.1);
+            }
+            
+            100%{   
+                opacity: 5%;
+                transform: scale(1);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="one" class="circles">
+        <div id="two" class="circles"></div>
+    </div>    
+   
+</body>
+</html>
